@@ -15,12 +15,17 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/foo', function () {
-    return 'Hello World!';
-});
+$router->get('/api/usuario', 'UsuarioController@get');
+$router->get('/api/usuario/{id}', 'UsuarioController@getId');
+$router->post('/api/usuario', 'UsuarioController@save');
+$router->put('/api/usuario/{id}', 'UsuarioController@update');
+$router->delete('/api/usuario/{id}', 'UsuarioController@delete');
 
-$router->get('/api/usuario', 'UsuarioController@index');
-$router->get('/api/usuarioId/{id}', 'UsuarioController@getUsuario');
-$router->post('/api/saveUsuario', 'UsuarioController@saveUsuario');
-$router->put('/api/updateUsuario/{id}', 'UsuarioController@updateUsuario');
-$router->delete('/api/deleteUsuario/{id}', 'UsuarioController@deleteUsuario');
+$router->get('/usuario', 'UsuarioController@index');
+$router->get('/criarUsuario', 'UsuarioController@createTemplate');
+$router->get('/alterarUsuario/{id}', 'UsuarioController@updateTemplate');
+
+
+$router->post('/create', 'UsuarioController@create');
+$router->put('/edit/{id}', 'UsuarioController@edit');
+$router->delete('/destroy/{id}', 'UsuarioController@destroy');
