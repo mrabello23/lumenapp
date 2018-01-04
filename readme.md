@@ -6,6 +6,8 @@
 * abrir arquivo '.env' e adicionar configurações de BD
 * executar comando: php artisan migrate
 * adicionar o prefixo "http://yourHost/pathProjeto" em todas as urls listadas
+* substituir "yourHost" pelo host utilizado
+* substituir "pathProjeto" pelo nome da pasta do projeto utilizada
 
 ## Chamadas API (method - url)
 * buscar: GET - /public/api/usuario
